@@ -14,7 +14,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   app.use(bodyParser.json());
 
   // GET /filteredimage?image_url={{URL}}
-  app.get("/filteredimage", async (request, response) => {
+  app.get("/filteredimage", async (request:Request, response:Response) => {
       var imageUrl: string = String(request.query.image_url);
 
       if (!imageUrl) {
@@ -29,7 +29,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async ( request:Request, response:Response ) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
   
